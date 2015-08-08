@@ -13,12 +13,15 @@ ygzj_login = br.open("http://192.168.1.201:8081/Login.aspx")  #the login url
 
 br.select_form(nr = 0) #choose the form, #0 is the first form
 
-b["AdminName"] = "汤思泉" #the account label HTML ID
+br["AdminName"] = "汤思泉" #the account label HTML ID
 br["AdminPassword"] = "tang" #the password label HTML ID
-br.submit()   #登陆账号
+login = br.submit()   #登陆账号
+login_check = login.read()
+print login_check
 
-br.select_form(nr = 0)
-br.submit()   #签到/签退
+
+#br.select_form(nr = 0)
+#br.submit()   #签到/签退
 
 
 
